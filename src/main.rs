@@ -5,12 +5,14 @@ mod camera;
 mod pheromones;
 mod sprites;
 mod time_controls;
+mod ui;
 mod world;
 
 use ants::AntPlugin;
 use camera::CameraPlugin;
 use pheromones::PheromonePlugin;
 use time_controls::TimeControlsPlugin;
+use ui::UiPlugin;
 use world::WorldPlugin;
 
 fn main() {
@@ -30,6 +32,7 @@ fn main() {
             TimeControlsPlugin,
             AntPlugin,
             PheromonePlugin,
+            UiPlugin,
         ))
         .run();
 }

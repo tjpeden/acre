@@ -238,7 +238,7 @@ fn color_b(c: Color) -> f32 {
 
 /// Decay all pheromones over time
 fn pheromone_decay(mut pheromones: ResMut<PheromoneGrids>) {
-    const DECAY_RATE: f32 = 0.002; // Per tick
+    const DECAY_RATE: f32 = 0.0005; // Per tick - slow decay for persistent trails
 
     for z in 0..WORLD_SIZE {
         for y in 0..WORLD_SIZE {
