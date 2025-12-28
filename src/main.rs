@@ -1,11 +1,15 @@
 use bevy::prelude::*;
 
+mod ants;
 mod camera;
+mod pheromones;
 mod sprites;
 mod time_controls;
 mod world;
 
+use ants::AntPlugin;
 use camera::CameraPlugin;
+use pheromones::PheromonePlugin;
 use time_controls::TimeControlsPlugin;
 use world::WorldPlugin;
 
@@ -20,7 +24,13 @@ fn main() {
             ..default()
         }))
         .init_state::<GameState>()
-        .add_plugins((WorldPlugin, CameraPlugin, TimeControlsPlugin))
+        .add_plugins((
+            WorldPlugin,
+            CameraPlugin,
+            TimeControlsPlugin,
+            AntPlugin,
+            PheromonePlugin,
+        ))
         .run();
 }
 
